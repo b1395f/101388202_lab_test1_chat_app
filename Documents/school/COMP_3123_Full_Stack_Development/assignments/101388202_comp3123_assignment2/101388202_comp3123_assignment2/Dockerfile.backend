@@ -1,0 +1,15 @@
+FROM node:14
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3002
+
+ENV DB_CONNECTION_STRING="mongodb+srv://dbUser:dbPassword@cluster0.tgqhflm.mongodb.net/F2023_comp3123?retryWrites=true&w=majority"
+
+CMD ["node", "server.js"]
