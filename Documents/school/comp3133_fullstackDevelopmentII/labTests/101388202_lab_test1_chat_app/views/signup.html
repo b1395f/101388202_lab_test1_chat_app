@@ -45,10 +45,8 @@
 
                 if (response.ok) {
                     alert('Sign up successful! Please login.');
-                    // Redirect the user to the login page after successful signup
                     window.location.href = '/login';
                 } else {
-                    // Handle signup failure
                     console.error('Sign up failed');
                     alert('Sign up failed. Please try again.');
                 }

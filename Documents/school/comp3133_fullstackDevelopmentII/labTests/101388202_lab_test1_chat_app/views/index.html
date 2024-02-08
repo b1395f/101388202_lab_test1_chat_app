@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form id="login-form">
+    <form id="login-form" action="/chatscreen" method="GET">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br>
@@ -19,35 +19,34 @@
     </form>
 
     <script>
-        document.getElementById('login-form').addEventListener('submit', async function(event) {
-            event.preventDefault();
+        // document.getElementById('login-form').addEventListener('submit', async function(event) {
+        //     event.preventDefault();
 
-            const formData = {
-                username: document.getElementById('username').value,
-                password: document.getElementById('password').value
-            };
+        //     const formData = {
+        //         username: document.getElementById('username').value,
+        //         password: document.getElementById('password').value
+        //     };
 
-            try {
-                const response = await fetch('/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
+        //     try {
+        //         const response = await fetch('/login', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json'
+        //             },
+        //             body: JSON.stringify(formData)
+        //         });
 
-                if (response.ok) {
-                    window.location.href = '/chatscreen'; // Redirect to chat screen if login is successful
-                } else {
-                    // Handle login failure
-                    console.error('Login failed');
-                    alert('Login failed. Please check your username and password.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-            }
-        });
+        //         if (response.ok) {
+        //             window.location.href = '/chatscreen'; 
+        //         } else {
+        //             console.error('Login failed');
+        //             alert('Login failed. Please check your username and password.');
+        //         }
+        //     } catch (error) {
+        //         console.error('Error:', error);
+        //         alert('An error occurred. Please try again.');
+        //     }
+        // });
 
         function redirectToSignup() {
 

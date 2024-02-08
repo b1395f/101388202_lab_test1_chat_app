@@ -67,9 +67,12 @@ serverIO.on('connection', (socket) => {
     
 })
 
-//app.use('/signup',signupRouter);
 app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'signup.html'));
+});
+
+app.get('/chatscreen', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'chatscreen.html'));
 });
 
 module.exports = app;
